@@ -1,0 +1,29 @@
+<form [formGroup]="myFormGroup" (ngSubmit)="onSubmit()">
+  <ion-item>
+    <ion-label for="course-1">Course 1 groups: </ion-label>
+    <ion-input id="course-1" type="number" formControlName="course1"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label for="course-2">Course 2 groups: </ion-label>
+    <ion-input id="course-2" type="number" formControlName="course2"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label for="course-3">Course 3 groups: </ion-label>
+    <ion-input id="course-3" type="number" formControlName="course3"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label for="course-4">Course 4 groups: </ion-label>
+    <ion-input id="course-4" type="number" formControlName="course4"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label for="course-5">Course 5 groups: </ion-label>
+    <ion-input id="course-5" type="number" formControlName="course5"></ion-input>
+  </ion-item>
+  <ion-button (click)='mass()' type="submit" color="my-color" expand="block" fill="outline" [disabled]="!myFormGroup.valid">Submit</ion-button>
+  </form>
+    <form [formGroup]="form" (ngSubmit)="onSubmit_2()">
+      <div *ngFor="let row of form.controls;let i=index">
+        <input *ngFor="let col of row.controls" [formControl]="col">
+      </div>
+      <ion-button (click)='sendToParent()' type="submit" color="my-color" expand="block" fill="outline" [disabled]="!form.valid">Result</ion-button>
+    </form>
